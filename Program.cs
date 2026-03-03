@@ -1,4 +1,5 @@
-﻿using Serilog;
+using Serilog;
+using Serilog.Formatting.Json;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -9,12 +10,16 @@ namespace ConsoleApp26
     {
         static void Main()
         {
+
+
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Verbose() 
-                .WriteTo.Console()
-                .WriteTo.File("logs/app.log",
-                    rollingInterval: RollingInterval.Day,
+                .MinimumLevel.Verbose()
+                .WriteTo.Console(
                     outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                .WriteTo.File(
+                    new JsonFormatter(),
+                    "logs/app.json",
+                    rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
             Log.Verbose("TaskManager запущен");
