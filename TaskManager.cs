@@ -1,4 +1,4 @@
-﻿using Serilog;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,9 +14,10 @@ namespace ConsoleApp26
         {
             Log.Verbose("Начало операции AddTask.");
 
-            _tasks.Add(new TaskItem(title));
+            var task = new TaskItem(title);
+            _tasks.Add(task);
 
-            Log.Information($"Задача \"{title}\" успешно добавлена.");
+            Log.Information("Задача \"{Title}\" успешно добавлена.", task.Title, task);
 
             Log.Information($"Количество задач после добавления: {_tasks.Count}");
 
