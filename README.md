@@ -1,4 +1,4 @@
-
+## КТ2
 ### Установка пакетов  
 
 <img width="437" height="37" alt="image" src="https://github.com/user-attachments/assets/69626fd9-b7a5-4999-8870-8f74731aaa0f" />  
@@ -11,4 +11,11 @@
 
 ### Всё логирование заменено на Serilog  
 <img width="413" height="263" alt="image" src="https://github.com/user-attachments/assets/71b15491-9c5f-49c2-961d-9cbeb1c21f4e" />
+
+## КТ3  
+### Структурирование логов  
+<img width="1455" height="257" alt="image" src="https://github.com/user-attachments/assets/ee9acf56-3795-4792-aabf-689ad8e50805" />  
+<img width="435" height="102" alt="image" src="https://github.com/user-attachments/assets/ee8964f9-54fe-4022-8364-7ffb33ff69ba" />
+
+
 
