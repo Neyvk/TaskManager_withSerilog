@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using TaskManager;
 
 namespace ConsoleApp26
 {
@@ -12,57 +13,54 @@ namespace ConsoleApp26
 
         public void AddTask(string title)
         {
-            Log.Verbose("Начало операции AddTask.");
+            ExceptionHandler.Run("addtask", () =>
+            {
+                var task = new TaskItem(title);
+                _tasks.Add(task);
 
-            var task = new TaskItem(title);
-            _tasks.Add(task);
+                Log.Information("задача \"{title}\" успешно добавлена.", task.Title, task);
 
-            Log.Information("Задача \"{Title}\" успешно добавлена.", task.Title, task);
+                Log.Information("количество задач после добавления: {count}", _tasks.Count);
+            });
 
-            Log.Information($"Количество задач после добавления: {_tasks.Count}");
 
-            Log.Verbose("Конец операции AddTask.");
         }
 
         public void RemoveTask(string title)
         {
-            Log.Verbose("Начало операции RemoveTask.");
-
-            var task = _tasks.FirstOrDefault(t =>
+            ExceptionHandler.Run("removetask", () =>
+            {
+                var task = _tasks.FirstOrDefault(t =>
                 t.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
 
-            if (task == null)
-            {
-                Log.Error($"Задача \"{title}\" не найдена.");
+                if (task == null)
+                {
+                    throw new InvalidOperationException($"Задача \"{title}\" не найдена");
+                }
 
-                Log.Verbose("Конец операции RemoveTask.");
-                return;
-            }
 
-            _tasks.Remove(task);
+                _tasks.Remove(task);
 
-            Log.Information($"Задача \"{title}\" успешно удалена.");
+                Log.Information($"Задача \"{title}\" успешно удалена.");
 
-            Log.Information($"Количество задач после удаления: {_tasks.Count}");
-
-            Log.Verbose("Конец операции RemoveTask.");
+                Log.Information($"Количество задач после удаления: {_tasks.Count}");
+            });
         }
 
         public void ListTasks()
         {
-            Log.Verbose("Начало операции ListTasks.");
-
-            if (_tasks.Count == 0)
+            ExceptionHandler.Run("listtasks", () =>
             {
-                Log.Information("Список задач пуст.");
+                if (_tasks.Count == 0)
+                {
+                    Log.Information("Список задач пуст.");
 
-                Log.Verbose("Конец операции ListTasks.");
-                return;
-            }
+                    Log.Verbose("Конец операции ListTasks.");
+                    return;
+                }
 
-            Log.Information($"Всего задач: {_tasks.Count}");
-
-            Log.Verbose("Конец операции ListTasks.");
+                Log.Information($"Всего задач: {_tasks.Count}");
+            });
         }
     }
 }
