@@ -6,12 +6,14 @@ using System.IO;
 
 namespace ConsoleApp26
 {
+    using Serilog;
+    using Serilog.Formatting.Json;
+    using System;
+
     class Program
     {
         static void Main()
         {
-
-
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .WriteTo.Console(
@@ -57,7 +59,6 @@ namespace ConsoleApp26
                         continue;
                 }
             }
-
         }
     }
 }
