@@ -17,5 +17,13 @@
 <img width="1455" height="257" alt="image" src="https://github.com/user-attachments/assets/ee9acf56-3795-4792-aabf-689ad8e50805" />  
 <img width="435" height="102" alt="image" src="https://github.com/user-attachments/assets/ee8964f9-54fe-4022-8364-7ffb33ff69ba" />
 
+## КТ4  
+### Трассировка операций  (файлы с этим проектом расположены отдельно, так как это побочный квест)
+В отдельном проекте изменена структура, для демонстрации трассировки операций  
+<img width="682" height="124" alt="image" src="https://github.com/user-attachments/assets/f706be00-f586-436d-86f7-baaa4e547b06" />  
+установлена задержка в 1000мс для проверки  
+<img width="300" height="64" alt="image" src="https://github.com/user-attachments/assets/a8a55221-b2df-4ca0-88ba-a36f9d5014b1" />
+
+
 
 
