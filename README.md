@@ -1,4 +1,4 @@
-## КТ2
+# КТ2
 ### Установка пакетов  
 
 <img width="437" height="37" alt="image" src="https://github.com/user-attachments/assets/69626fd9-b7a5-4999-8870-8f74731aaa0f" />  
@@ -12,17 +12,23 @@
 ### Всё логирование заменено на Serilog  
 <img width="413" height="263" alt="image" src="https://github.com/user-attachments/assets/71b15491-9c5f-49c2-961d-9cbeb1c21f4e" />
 
-## КТ3  
+# КТ3  
 ### Структурирование логов  
 <img width="1455" height="257" alt="image" src="https://github.com/user-attachments/assets/ee9acf56-3795-4792-aabf-689ad8e50805" />  
 <img width="435" height="102" alt="image" src="https://github.com/user-attachments/assets/ee8964f9-54fe-4022-8364-7ffb33ff69ba" />
 
-## КТ4  
+# КТ4  
 ### Трассировка операций  (файлы с этим проектом расположены отдельно, так как это побочный квест)
 В отдельном проекте изменена структура, для демонстрации трассировки операций  
 <img width="682" height="124" alt="image" src="https://github.com/user-attachments/assets/f706be00-f586-436d-86f7-baaa4e547b06" />  
 установлена задержка в 1000мс для проверки  
-<img width="300" height="64" alt="image" src="https://github.com/user-attachments/assets/a8a55221-b2df-4ca0-88ba-a36f9d5014b1" />
+<img width="300" height="64" alt="image" src="https://github.com/user-attachments/assets/a8a55221-b2df-4ca0-88ba-a36f9d5014b1" />  
+
+# КТ5  
+### Логирование ошибок и исключений
+Добавлен обработчик исключений, для демонстрации remove при несуществующей задаче выбрасывает ошибку, вместо предупреждения  
+<img width="2007" height="176" alt="image" src="https://github.com/user-attachments/assets/3dd26538-2eaa-4c25-bee6-bc74950dc5f6" />
+
 
 
 
